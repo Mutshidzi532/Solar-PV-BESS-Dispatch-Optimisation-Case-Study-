@@ -81,3 +81,44 @@ To audit mathematical integrity across the operational horizon, every single hou
 
 ## 8. Conclusion
 The model proves that simply adding solar capacity yields diminishing returns without matching energy storage flexibility. Storage additions must balance power constraints with energy volume constraints. While larger batteries successfully curb generation losses and improve renewable integration fractions, technical efficiency overheads and diminishing optimisation returns require careful multi-scenario system balancing before full field deployment.
+## Key Operational Performance Charts
+
+### 1. 24-Hour PV Generation vs Load Demand Profile
+This profile highlights the fundamental daily mismatch between solar resource availability (peaking at midday) and consumer energy load requirements (peaking during evening hours).
+
+![24-Hour PV Generation vs Load Demand](https://quickchart.io{type:%27line%27,data:{labels:[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],datasets:[{label:%27PV%20Generation%20(MW)%27,borderColor:%27%23ED7D31%27,backgroundColor:%27rgba(237,125,49,0.1)%27,data:[0,0,0,0,0,0,5,25,50,75,90,98,100,95,85,65,40,15,0,0,0,0,0,0],fill:true},{label:%27Load%20Demand%20(MW)%27,borderColor:%27%231F4E78%27,data:[40,38,35,35,40,50,65,70,65,60,55,55,55,50,50,55,65,80,85,80,70,60,50,45],fill:false}]}})
+
+---
+
+### 2. 24-Hour BESS State of Charge (SOC) Tracking
+Tracks the BESS hourly State of Charge (SOC). It demonstrates a complete operational cycle: morning depletion hitting the absolute 20% lower boundary, aggressive solar charging during midday hours, and evening discharging down to the system floor.
+
+![24-Hour BESS SOC Tracking](https://quickchart.io{type:%27line%27,data:{labels:[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],datasets:[{label:%27Battery%20SOC%20(%%27),borderColor:%27%232E7D32%27,backgroundColor:%27rgba(46,125,50,0.1)%27,data:[28.95,20,20,20,20,20,20,20,20,27.12,43.75,64.18,85.55,100,100,100,86.84,60.53,34.21,20,20,20,20,20],fill:true}]}})
+
+---
+
+### 3. Solar PV Generation Profile vs Grid Export Limit
+Visualises exactly when peak solar production breaches the physical 40 MW grid interconnection capacity limit. This window frames the operational boundary where energy storage shifting becomes mandatory to avoid active clipping.
+
+![PV Generation vs Grid Export Limit](https://quickchart.io{type:%27line%27,data:{labels:[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],datasets:[{label:%27PV%20Generation%20(MW)%27,borderColor:%27%23ED7D31%27,data:[0,0,0,0,0,0,5,25,50,75,90,98,100,95,85,65,40,15,0,0,0,0,0,0],fill:false},{label:%27Grid%20Export%20Limit%20(40%20MW)%27,borderColor:%27%23C62828%27,borderDash:[5,5],data:[40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40],fill:false}]}})
+
+---
+
+### 4. Annual Solar Curtailment Across Storage Scenarios
+A comparative performance breakdown of four distinct battery sizes (100MWh, 200MWh, 300MWh, and 400MWh capacity states), highlighting total cumulative annual generation losses prevented by scaling capacity.
+
+![Annual Curtailment Comparison](https://quickchart.io{type:%27bar%27,data:{labels:[%27100MWh%27,%27200MWh%20(Base)%27,%27300MWh%27,%27400MWh%27],datasets:[{label:%27Annual%20Curtailment%20(GWh)%27,backgroundColor:[%27%23C62828%27,%27%231F4E78%27,%27%231F4E78%27,%27%231F4E78%27],data:[42.5,21.2,10.8,4.1]}]}})
+
+---
+
+### 5. BESS Scale Impact on Solar Curtailment and Renewable Fraction
+A system optimisation look-up matrix highlighting the technical trade-offs and diminishing returns of adding incremental battery cells:
+
+| BESS Capacity Size | Total Annual Curtailment | Project Renewable Fraction | Technical System Status |
+| :---: | :---: | :---: | :--- |
+| **0 MWh (No BESS)** | 38.4% Curtailment | 44.1% Renewable Integration | Severe Midday Generation Spilling |
+| **100 MWh BESS** | 24.1% Curtailment | 61.8% Renewable Integration | High Power Bottlenecking Observed |
+| **200 MWh (Base)** | 11.2% Curtailment | 78.4% Renewable Integration | **Optimal Asset Sizing Sweet-Spot** |
+| **300 MWh BESS** | 4.8% Curtailment  | 86.2% Renewable Integration | Diminishing Capital Investment Returns |
+| **400 MWh BESS** | 1.2% Curtailment  | 89.5% Renewable Integration | Battery Under-utilisation Across Seasons |
+
